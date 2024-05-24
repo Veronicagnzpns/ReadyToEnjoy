@@ -1,0 +1,21 @@
+<ion-content color="light">
+    <ion-header [translucent]="true">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+          </ion-buttons>
+          <ion-title>Nueva Actividad</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <app-login-form [control]="form.controls.title" type="text" label="Título" ></app-login-form>
+      <app-login-form [control]="form.controls.description" type="textarea" label="Descripción" ></app-login-form>
+      <div>
+        <ion-img [src]="photo" *ngFor="let photo of photos"></ion-img>
+        <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+          <ion-fab-button (click)="takePhoto()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+    </div>
+</ion-content>

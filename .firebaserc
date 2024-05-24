@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "readytoenjoy-bb929": {
+      "hosting": {
+        "app": [
+          "readytoenjoy-bb929"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "readytoenjoy-bb929"
+  }
+}

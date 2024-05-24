@@ -1,0 +1,19 @@
+
+<div class="content">
+  <div class="f-center">
+    <form (keyup.enter)="submit()" class="ion-text-center">
+      
+      
+        <ion-title>LOGIN</ion-title>
+        <app-login-form [control]="form.controls.name" type="text" label="Name" ></app-login-form>
+        <app-login-form [control]="form.controls.surname" type="text" label="Surname" ></app-login-form>
+        <app-login-form [control]="form.controls.email" type="email" label="Email" ></app-login-form>
+        <app-login-form [control]="form.controls.password" type="password" label="Password" ></app-login-form>
+        <app-login-form [control]="form.controls.confirmPassword" type="password" label="Confirmar Password" ></app-login-form>
+        <ion-button [disabled]="form.invalid" type="submit" shape="round">Register</ion-button>
+      
+        
+      
+    </form>
+  </div>
+</div>

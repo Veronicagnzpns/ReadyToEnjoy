@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Actividades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="addOrUpdateActivities()" shape="round"><ion-icon slot="icon-only" name="add"></ion-icon></ion-button>
+
+  <div class="content">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let actividad of actividades" size-lg="12" sixe-md="6" size="12" >
+          <ion-card mode="ios">
+            <ion-card-header>
+              <ion-card-title>{{actividad.title}}</ion-card-title>
+            </ion-card-header>
+
+            <ion-img *ngIf = 'actividad.foto !== null'>{{actividad.foto}}</ion-img>
+          
+            <ion-card-content>
+              <p>{{actividad.description}}</p>
+            </ion-card-content>
+            <ion-button (click) = "addOrUpdateActivities(actividad)"><ion-icon slot="icon-only" name="eye"></ion-icon></ion-button>
+            <ion-button color="danger"><ion-icon slot="icon-only" name="trash" ></ion-icon></ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>

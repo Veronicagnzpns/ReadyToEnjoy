@@ -1,0 +1,37 @@
+<ion-app>
+  <ion-menu side="start" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/home" routerDirection="root">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item routerLink="/activities">
+            <ion-icon slot="start" name="basketball"></ion-icon>
+            <ion-label>Activities</ion-label>
+          </ion-item>
+          <ion-item routerLink="/post">
+            <ion-icon slot="start" name="image"></ion-icon>
+            <ion-label>Post</ion-label>
+          </ion-item>
+          <ion-item routerLink="/about">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>About</ion-label>
+          </ion-item>
+          <ion-item routerLink="/me">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>Me</ion-label>
+          </ion-item>
+          
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

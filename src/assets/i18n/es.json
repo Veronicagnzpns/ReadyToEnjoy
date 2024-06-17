@@ -1,0 +1,12 @@
+{
+    "menu":{
+        "home":"Inicio",
+        "activities":"Actividades",
+        "myActivities":"Mi Actividades",
+        "about":"Información"
+    },
+    "about":{
+        "title":"",
+        "description": "Esta aplicacion trata de un una app donde jovenes con ganas de disfrutar de su tiempo libre suben actividades que han realizado o que saben donde se puede realizar para que otras personas puedan disfrutar igual que ellos de un buen rato en su tiempo libre"
+    }
+}

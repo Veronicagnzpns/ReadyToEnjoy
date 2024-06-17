@@ -1,17 +1,19 @@
 <ion-content color="light">
     <ion-header [translucent]="true">
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
-          </ion-buttons>
-          <ion-title>Nueva Actividad</ion-title>
-        </ion-toolbar>
-      </ion-header>
+      <ion-toolbar>
+        <ion-title class="ion-text-center" >Nueva Actividad</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="addActivity()" color="success" ><ion-icon slot="icon-only"  name="checkmark"></ion-icon></ion-button>
+          <ion-button color="danger" ><ion-icon slot="icon-only"  name="close"></ion-icon></ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 
       <app-login-form [control]="form.controls.title" type="text" label="Título" ></app-login-form>
       <app-login-form [control]="form.controls.description" type="textarea" label="Descripción" ></app-login-form>
+      <app-login-form [control]="form.controls.photo" type="photo" label="Photo" ></app-login-form>
       <div>
-        <ion-img [src]="photo" *ngFor="let photo of photos"></ion-img>
+        <ion-img [src]="" ></ion-img>
         <ion-fab vertical="bottom" horizontal="center" slot="fixed">
           <ion-fab-button (click)="takePhoto()">
             <ion-icon name="camera"></ion-icon>

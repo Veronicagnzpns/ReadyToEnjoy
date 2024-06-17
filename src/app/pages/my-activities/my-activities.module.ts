@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MePageRoutingModule } from './me-routing.module';
+import { MyActivitiesPageRoutingModule } from './my-activities-routing.module';
 
-import { MePage } from './me.page';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { MyActivitiesPage } from './my-activities.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MePageRoutingModule,
-    SharedModule
+    MyActivitiesPageRoutingModule
   ],
-  declarations: [MePage]
+  declarations: [MyActivitiesPage]
 })
-export class MePageModule {}
+export class MyActivitiesPageModule {}

@@ -1,16 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" >
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>About</ion-title>
   </ion-toolbar>
 </ion-header>
+<div>
+  <ion-grid>
+      <ion-col size="6" >
+        <ion-img src="assets/imgs/veronicagp.jpeg" ></ion-img>
+      </ion-col>
+  </ion-grid>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Verónica González Pons</ion-card-title>
+      <ion-card-subtitle>Creadora de la aplicacion READYTOENJOY</ion-card-subtitle>
+    </ion-card-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">about</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+    <ion-card-content>
+      Esta aplicacion trata de un una app donde jovenes con ganas de disfrutar de su tiempo libre suben
+      actividades que han realizado anonimamente para que otras personas puedan cojer ideas y
+      disfrutar igual que ellos de un buen rato en su tiempo libre, esta en creacion y queda muchos 
+      avances por implementar en esta generosa aplicacion.
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="signOut()" shape="round">
+    Cerrar Sesion
+  </ion-button>
+</div>
+
+

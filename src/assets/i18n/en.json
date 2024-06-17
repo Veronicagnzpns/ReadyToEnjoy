@@ -1,0 +1,11 @@
+{
+    "menu":{
+        "home":"Home",
+        "activities":"Activities",
+        "myActivities":"MyActivities",
+        "about":"About"
+    },
+    "about":{
+        "title": ""
+    }
+}

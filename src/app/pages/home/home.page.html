@@ -1,16 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" >
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      {{ 'menu.home' | translate }}
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click) ="translateEs()"><ion-icon slot="icon-only" ></ion-icon>ES</ion-button>
+      <ion-button (click)="translateEn()" color="danger"><ion-icon slot="icon-only"></ion-icon>EN</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-grid>
+  <ion-col size="6" >
+    <ion-img src="assets/imgs/fondo.png" ></ion-img>
+  </ion-col>
+</ion-grid>
+
+<ion-content class="background" >
   <ion-button routerLink="/about" class="button" >About</ion-button>
   <ion-button routerLink="/activities">Activities</ion-button>
-  <ion-button routerLink="/post" >Post</ion-button>
+  <ion-button routerLink="/my-activities" >My Activities</ion-button>
 </ion-content>

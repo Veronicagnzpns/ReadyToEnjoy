@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{Router} from '@angular/router'
 import { AlertController, AlertOptions, LoadingController, LoadingOptions, ModalController, ModalOptions, ToastController, ToastOptions } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class UtilsService {
 
 
   constructor(
+    private translate: TranslateService,
     private loadingController: LoadingController,
     private router: Router,
     private toastController: ToastController,
@@ -69,6 +71,24 @@ export class UtilsService {
 
   dismissModal(data: any){
     this.modalController.dismiss(data);
+  }
+
+  //translate
+  setDefaultLang(){
+    let lang = this.getElementFromLocalStorage('lang')
+    if(!lang || lang == ''){
+      this.translate.setDefaultLang('en')
+    }
+    else {
+      this.translate.setDefaultLang(lang)
+    }
+  }
+
+  setLang(lang: string){
+    if(lang == 'es' || lang == 'en'){
+      this.setElementInLocalstorage('lang',lang)
+      this.translate.setDefaultLang(lang)
+    }
   }
 
 }

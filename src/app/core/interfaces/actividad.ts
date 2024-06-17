@@ -1,6 +1,7 @@
 export interface Actividad{
-    id: string,
-    foto?: string,
+    id: number,
+    photo?: string,
     title: string,
     description: string,
+    idAuthor: string,
 }

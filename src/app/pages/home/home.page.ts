@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UtilsService } from 'src/app/core/services/utils.service';
 
 
 @Component({
@@ -8,6 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    private utilSvc: UtilsService
+  ) {}
 
+  translateEs(){
+    this.utilSvc.setLang('es')
+
+  }
+  translateEn(){
+    this.utilSvc.setLang('en')
+  }
 }

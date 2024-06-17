@@ -1,5 +1,5 @@
 
-<div class="content">
+<div class="content" >
   <div class="f-center">
     <form (keyup.enter)="submit()" class="ion-text-center">
       
@@ -7,7 +7,7 @@
         <ion-title>LOGIN</ion-title>
         <app-login-form [control]="form.controls.email" type="email" label="Email" ></app-login-form>
         <app-login-form [control]="form.controls.password" type="password" label="Password" ></app-login-form>
-        <ion-button [disabled]="form.invalid" type="submit" shape="round">Login</ion-button>
+        <ion-button [disabled]="form.invalid" (click)="submit()" type="submit" shape="round">Login</ion-button>
       <div>
         <label>No tienes cuenta?</label>
         <br>

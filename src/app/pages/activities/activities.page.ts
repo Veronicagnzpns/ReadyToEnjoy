@@ -4,6 +4,7 @@ import { UserRegister } from 'src/app/core/interfaces/user-register';
 import { FirebaseService } from 'src/app/core/services/firebase/firebase.service';
 import { UtilsService } from 'src/app/core/services/utils.service';
 import { AddActivityComponent } from 'src/app/shared/components/add-activity/add-activity.component';
+import { EditActivityComponent } from 'src/app/shared/components/edit-activity/edit-activity.component';
 
 @Component({
   selector: 'app-activities',
@@ -12,9 +13,7 @@ import { AddActivityComponent } from 'src/app/shared/components/add-activity/add
 })
 export class ActivitiesPage implements OnInit {
 
-  actividades: Actividad[] =[
-  ]
-
+  actividades: Actividad[] =[]
 
   constructor(
     private firebaseSvc: FirebaseService,
@@ -28,20 +27,28 @@ export class ActivitiesPage implements OnInit {
     this.getActividades()
   }
 
-  addOrUpdateActivities(actividad?: Actividad){
+  addActivities( ){
     this.utilsSvc.presentModal({
       component: AddActivityComponent,
-      componentProps:{ actividad },
+      componentProps:{},
       cssClass: 'add-modal'
     })
   }
 
+  editActivities(actividad: Actividad){
+    this.utilsSvc.presentModal({
+      component: EditActivityComponent,
+      componentProps:{ actividad },
+      cssClass: ''
+    })
+  }
+
   getActividades(){
-    let user: UserRegister = this.utilsSvc.getElementFromLocalStorage('user')
-    let path = `users/${user.id}`
-    let sub = this.firebaseSvc.getSubcollection(path,'post').subscribe({
+   // let user: UserRegister = this.utilsSvc.getElementFromLocalStorage('user')
+    let sub = this.firebaseSvc.getActivities().subscribe({
       next: (res) => {
         console.log(res);
+        this.actividades = res;
       }
     })
   }

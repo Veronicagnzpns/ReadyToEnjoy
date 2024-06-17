@@ -19,7 +19,13 @@ import { SharedModule } from './shared/shared.module';
 
 import{AngularFireAuthModule} from '@angular/fire/compat/auth';
 import{AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +33,17 @@ import{AngularFirestoreModule} from '@angular/fire/compat/firestore';
             IonicModule.forRoot(), 
             AppRoutingModule, 
             SharedModule,
+            HttpClientModule,
             AngularFireModule.initializeApp(environment.firebaseConfig),
             AngularFireAuthModule,
-            AngularFirestoreModule
+            AngularFirestoreModule,
+            TranslateModule.forRoot({
+              loader: {
+              provide: TranslateLoader,
+              useFactory: (createTranslateLoader),
+              deps: [HttpClient]
+              }
+            })
             
           ],
   providers: [

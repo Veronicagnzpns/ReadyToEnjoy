@@ -13,12 +13,11 @@ import { UtilsService } from 'src/app/core/services/utils.service';
 })
 export class AddActivityComponent  implements OnInit {
 
-  @Input() actividad: Actividad;
   user = {} as UserRegister
   photos: string[]= [];
 
   form = new FormGroup({
-    foto:new FormControl('',),
+    photo:new FormControl('',),
     title: new FormControl('',[Validators.required, Validators.minLength(4)]),
     description: new FormControl('',[Validators.required, Validators.minLength(4)])
   })
@@ -33,15 +32,19 @@ export class AddActivityComponent  implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.utilsSvc.getElementFromLocalStorage('user')
-    if(this.actividad){
-      //this.form.setValue(this.actividad);
-      this.form.updateValueAndValidity()
-    }
   }
 
   async takePhoto(){
     await this.postSvc.addNewPhoto();
+  }
+
+
+  addActivity(){
+    let user: string = this.utilsSvc.getElementFromLocalStorage('user')
+    let actividad: Actividad = {id:50, title: this.form.controls.title.value, description: this.form.controls.description.value, idAuthor: user, photo: this.form.controls.photo.value }
+
+    //console.log(this.actividad)
+    this.firebaseSvc.postActivity(actividad)
   }
 
 }

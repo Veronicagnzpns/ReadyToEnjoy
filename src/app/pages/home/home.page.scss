@@ -17,5 +17,21 @@
   text-decoration: none;
 }
 
+ion-img{
+  width: 400px;
+  height: 400px;
+  display:block;
+  margin:auto;
+}
 
+ion-content.background{
+  --background: src("/src/assets/imgs/fono2.jpg") 0 0/100% 100% no-repeat;
+}
 
+ion-button{
+  padding: 10px;
+  width: 700px;
+  height: 50px;
+  display:block;
+  margin:auto;
+}

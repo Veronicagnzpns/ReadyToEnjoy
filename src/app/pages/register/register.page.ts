@@ -56,6 +56,7 @@ export class RegisterPage implements OnInit {
       this.firebaseSvc.singUp(this.form.value as UserRegister).then(async res =>{
         console.log(res);
 
+        this.utilsSvc.setElementInLocalstorage('user', res.user.uid)
 
         await this.firebaseSvc.updateUser({displayname: this.form.value.name})
         this.utilsSvc.routerLink('/home')

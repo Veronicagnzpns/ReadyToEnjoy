@@ -37,6 +37,7 @@ export class LoginPage implements OnInit {
       this.firebaseSvc.login(this.form.value as UserRegister).then(async res =>{
         console.log(res);
 
+        this.utilsSvc.setElementInLocalstorage('user', res.user.uid)
 
         this.utilsSvc.routerLink('/home')
 
